@@ -16,7 +16,7 @@ default_args = {
 
 dag = DAG(
     'twitter_dag',
-    default_args= default_args
+    default_args= default_args,
     description= 'Pulls data from twitter api to and s3 bucket'
 )
 run_etl = PythonOperator(

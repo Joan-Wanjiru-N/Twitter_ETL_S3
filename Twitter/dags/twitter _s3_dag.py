@@ -13,3 +13,16 @@ default_args = {
     'email_on_retry': True,
     'retry_delay': timedelta(minutes=1)
 }
+
+dag = DAG(
+    'twitter_dag',
+    default_args= default_args
+    description= 'Pulls data from twitter api to and s3 bucket'
+)
+run_etl = PythonOperator(
+    task_id = 'complete_twitter_etl',
+    python_callable= run_twitter_etl,
+    dag = dag
+)
+
+run_etl

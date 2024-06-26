@@ -1,3 +1,11 @@
-.Twitter/dags/config.json
+build
+
+dist
+
+Twitter/config/config.py
+
+Twitter/dags/archive
 
 **/__pycache__/
+
+*.egg-info
